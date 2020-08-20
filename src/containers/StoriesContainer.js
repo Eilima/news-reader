@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getStoryIds, getStory } from "../services/hackerNews-api";
+import { getStoryIds } from "../services/hackerNews-api";
 import { Story } from "../components/Story";
 
 export const StoriesContainer = () => {
