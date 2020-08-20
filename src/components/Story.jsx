@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getStory } from "../services/hackerNews-api";
+import { mapTime } from "../mappers/mapTime";
 import "../styles/StoryWrapper.css";
 
 export const Story = ({ storyId }) => {
@@ -18,7 +19,7 @@ export const Story = ({ storyId }) => {
       </a>
       <div className="story-meta">
         <p>By: {story.by}</p>
-        <p>Posted: {story.time}</p>
+        <p>Posted: {mapTime(story.time)}</p>
       </div>
     </div>
   ) : null;
