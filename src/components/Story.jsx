@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getStory } from "../services/hackerNews-api";
+import "../styles/StoryWrapper.css";
 
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
@@ -9,7 +10,7 @@ export const Story = ({ storyId }) => {
   }, [storyId]);
 
   return story && story.url ? (
-    <>
+    <div className="story-wrapper">
       <a href={story.url}>
         <p>
           {story.title} #{storyId}
@@ -17,6 +18,6 @@ export const Story = ({ storyId }) => {
       </a>
       <p>By: {story.by}</p>
       <p>Posted: {story.time}</p>
-    </>
+    </div>
   ) : null;
 };
