@@ -8,5 +8,5 @@ export const StoriesContainer = () => {
     getStoryIds().then((ids) => setStoryIds(ids));
   }, []);
 
-  return storyIds.map((storyId) => <Story storyId={storyId} />);
+  return storyIds.map((storyId) => <Story key={storyId} storyId={storyId} />);
 };
