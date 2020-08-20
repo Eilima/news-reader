@@ -12,12 +12,14 @@ export const Story = ({ storyId }) => {
   return story && story.url ? (
     <div className="story-wrapper">
       <a href={story.url}>
-        <p>
+        <h1>
           {story.title} #{storyId}
-        </p>
+        </h1>
       </a>
-      <p>By: {story.by}</p>
-      <p>Posted: {story.time}</p>
+      <div className="story-meta">
+        <p>By: {story.by}</p>
+        <p>Posted: {story.time}</p>
+      </div>
     </div>
   ) : null;
 };
