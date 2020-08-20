@@ -3,7 +3,13 @@ export const newStoriesUrl = `${baseUrl}newstories.json`;
 export const storyUrl = `${baseUrl}item/`;
 
 export const getStoryIds = async () => {
-  const response = await fetch(newStoriesUrl);
+  let response = await fetch(`${newStoriesUrl}`);
+  let data = response.json();
+  return data;
+};
+
+export const getStory = async (storyId) => {
+  const response = await fetch(`${storyUrl}${storyId}.json`);
   const data = response.json();
   return data;
 };
