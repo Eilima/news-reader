@@ -1,7 +1,7 @@
 .story-wrapper {
-  padding-top: 10px;
+  padding-top: 0.625rem;
   margin-bottom: 1.25rem;
-  border-top: 1px solid #ccc;
+  border-top: 0.0625rem solid #ccc;
 }
 
 .story-wrapper a {
@@ -11,9 +11,12 @@
   font-size: 0.7rem;
   line-height: 1.8;
   text-decoration: none;
+  display: block;
+  width: 100%;
 }
 
 .story-wrapper a h1 {
+  padding-left: 0.5rem;
   background-color: #f8dc3d;
 }
 
