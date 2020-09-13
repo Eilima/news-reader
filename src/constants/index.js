@@ -1,0 +1,2 @@
+const MAX_STORIES = 500;
+const STORY_INCREMENT = 30;
