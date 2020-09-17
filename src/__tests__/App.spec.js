@@ -13,15 +13,15 @@ test("renders the application", async () => {
   useInfiniteScroll.mockImplementation(() => {
     count: STORY_INCREMENT;
   });
-  getStory.mockImplementation(() => Promise.resolve(singularStory))
-  getStoryIds.mockImplementation(() => Promise.resolve(storyIds))
-  
-  await act(async() => {
-      const {getByText, queryByTestId} = render(<App/>)
-      await waitForElement(() => [
-          expect(getByText("Hacker News Stories")).toBeTruthy()
-          expect(getByText("Hacker News Stories")).toBeTruthy()
-      ])
-  })
+  getStory.mockImplementation(() => Promise.resolve(singularStory));
+  getStoryIds.mockImplementation(() => Promise.resolve(storyIds));
 
+  await act(async () => {
+    const { getByText, queryByTestId } = render(<App />);
+    await waitForElement(() => [
+      expect(getByText("Chip Challenges at 3/2nm [video]")).toBeTruthy(),
+      expect(getByText("Hacker News Stories")).toBeTruthy(),
+      expect(queryByTestId("story-by")).toEqual("By: Erick Lima"),
+    ]);
+  });
 });
