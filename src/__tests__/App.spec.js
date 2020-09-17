@@ -1,4 +1,4 @@
-import { React } from "reat";
+import { React } from "react";
 import { act } from "react-dom/test-utils";
 import { App } from "../App";
 import { storyIds, singularStory } from "../fixtures";
@@ -8,6 +8,12 @@ import { STORY_INCREMENT } from "../constants/index";
 import { cleanup, render, waitForElement } from "@testing-library/react";
 
 beforeEach(cleanup);
+
+jest.mock("../hooks/useInfiniteScroll.js");
+jest.mock("../services/hackerNews-api.js", () => ({
+  getStory: jest.fn(),
+  getStoryIds: jest.fn(),
+}));
 
 test("renders the application", async () => {
   useInfiniteScroll.mockImplementation(() => {

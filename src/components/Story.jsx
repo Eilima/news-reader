@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { getStory } from "../services/hackerNews-api";
 import { mapTime } from "../mappers/mapTime";
 import "../styles/StoryWrapper.css";
 
-export const Story = ({ storyId }) => {
+export const Story = memo(function Story({ storyId }) {
   const [story, setStory] = useState({});
 
   useEffect(() => {
+    console.log("Story ID", storyId);
     getStory(storyId).then((story) => setStory(story));
-  }, [storyId]);
+  }, []);
 
   return story && story.url ? (
     <div className="story-wrapper">
@@ -23,4 +24,4 @@ export const Story = ({ storyId }) => {
       </div>
     </div>
   ) : null;
-};
+});
